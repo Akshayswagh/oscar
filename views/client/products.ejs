@@ -1,0 +1,21 @@
+<%- include('../layout', { title: 'Products Page' }) %>
+<section class="product-section">
+    <h2 class="product-title">Our Products</h2>
+    <div class="product-grid">
+      <% products.forEach(product => { %>
+      <div class="product-card">
+        <img
+          src="<%= product.productImg %>"
+          class="product-img"
+          alt="<%= product.name %>"
+        />
+        <div class="product-info">
+          <h5 class="product-name"><%= product.name %></h5>
+          <p class="product-desc"><%= product.description %></p>
+          
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </section>
+  <%- include('../footer') %>

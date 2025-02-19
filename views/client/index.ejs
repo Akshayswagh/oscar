@@ -1,0 +1,83 @@
+<%- include('../layout', { title: 'Home Page' }) %>
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="slide"><img src="/images/slider-bg.jpg" alt="Slide 1" /></div>
+    <div class="slide"><img src="/images/slider-bg.jpg" alt="Slide 2" /></div>
+    <div class="slide"><img src="/images/slider-bg.jpg" alt="Slide 3" /></div>
+  </div>
+  <div class="text-overlay">
+    INHOUSE BLOCK TESTING TO ENSURE A SMOOTH FLUID FLOW.
+  </div>
+  <div class="buttons">
+    <a href="/contact"> <button class="contact">Contact</button></a>
+    <a href="/about"> <button class="about">About</button> </a>
+  </div>
+  <div class="dots">
+    <span class="dot" onclick="moveToSlide(0)"></span>
+    <span class="dot" onclick="moveToSlide(1)"></span>
+    <span class="dot" onclick="moveToSlide(2)"></span>
+  </div>
+</div>
+<section class="product-section">
+  <h2 class="product-title">Our Products</h2>
+  <div class="product-grid">
+    <% products.forEach(product => { %>
+    <div class="product-card">
+      <img
+        src="<%= product.productImg %>"
+        class="product-img"
+        alt="<%= product.name %>"
+      />
+      <div class="product-info">
+        <h5 class="product-name"><%= product.name %></h5>
+        <p class="product-desc"><%= product.description %></p>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</section>
+<div class="container">
+  <div class="content">
+    <h2>About Us</h2>
+    <p>
+      Oscar Enterprises is an ISO 9001:2015 organization established in 2011 by
+      Mr. Joshi. Initially, it was a tooling business which was started at a
+      very small institution. Later, with the business of tools making, an idea
+      of manufacturing connectors was born to establish and start manufacturing
+      of global standard products. It was established in 2013.
+    </p>
+    <p>
+      The company has grown to be a leading manufacturer in plastic connection
+      technology. It is the only 100% INDIAN firm that started manufacturing
+      leak-proof quick connectors since 2013, which is validated and approved by
+      many OEMs.
+    </p>
+    <p>
+      The range offered by us is widely acknowledged for high strength, high
+      temperature resistance, high quality, accurate designing, pressure
+      resistance, superior finish, durability, highly engineered, and easy
+      installation.
+    </p>
+
+    <h3>OUR VISION</h3>
+    <ul>
+      <li>To provide one-stop solutions to our customers.</li>
+      <li>To establish our BRAND as the most trusted Indian company.</li>
+      <li>To achieve a milestone in connection technology globally.</li>
+      <li>To create a benchmark.</li>
+    </ul>
+
+    <h3>MISSION</h3>
+    <p>
+      Our mission is to establish our BRAND as such a partner as the most
+      genuine, reliable, and safe engineered products supplier by implementing
+      global manufacturing technology.
+    </p>
+  </div>
+
+  <div class="image-container">
+    <img src="/images/about-img.jpg" alt="Company Image" />
+  </div>
+</div>
+
+<%- include('../footer') %>

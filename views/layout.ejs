@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><% title %></title>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="contact-info">
+        <span>&#x260E; Call : +91 8698106593</span>
+        <span>&#x2709; Email : demo@gmail.com</span>
+      </div>
+      <div class="socials">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/"><img src="images/logo1.png" alt="Logo" /></a>
+      </div>
+      <div class="hamburger" onclick="toggleNav()">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/products">PRODUCTS</a></li>
+          <li><a href="/about">ABOUT</a></li>
+          <li><a href="/contact">CONTACT</a></li>
+          <form action="/search" method="GET" class="search-form">
+            <div class="search-container">
+              <input
+                type="text"
+                name="q"
+                placeholder="Search ..."
+                class="search-input"
+              />
+              <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <!-- 🔍 Search icon -->
+            </div>
+          </form>
+        </ul>
+        <div class="search-container mobile">
+          <form
+            action="/search"
+            method="GET"
+            id="mobile-search"
+            class="search-form"
+          >
+            <input
+              type="text"
+              name="q"
+              placeholder="Search..."
+              class="search-input"
+            />
+            <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <!-- 🔍 Search icon -->
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main><%- typeof body !== 'undefined' ? body : '' %></main>
+
+    <script src="/js/layout.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/contact.js"></script>
+  </body>
+</html>

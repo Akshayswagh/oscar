@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - All Products</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .add-product-btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .add-product-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .products-table {
+      width: 80%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .products-table th, .products-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .products-table th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .products-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .products-table td img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Delete button styling */
+    .delete-btn {
+      padding: 8px 16px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .delete-btn:hover {
+      background-color: #cc0000;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .products-table {
+        width: 100%;
+      }
+
+      .products-table th, .products-table td {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      .products-table th, .products-table td {
+        font-size: 14px;
+      }
+
+      .add-product-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>All Products</h1>
+  <a href="/admin/add" class="add-product-btn">Add New Product</a>
+  
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Product Image</th>
+        <th>Action</th> <!-- New column for Delete button -->
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(product => { %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><img src="<%= product.productImg %>" alt="<%= product.name %>" width="100"></td>
+          <td>
+            <!-- Delete button -->
+            <form action="/admin/delete/<%= product.id %>" method="POST" style="display: inline;">
+              <button type="submit" class="delete-btn">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* Product Section */
+.product-section {
+  width: 90%;
+  margin: 25px auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.product-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Product Grid */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+/* Product Card (Compact Column Layout) */
+.product-card {
+  background: #f8f6f6;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 250px; /* Decreased width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.12);
+}
+
+/* Product Image (Full Width at Top) */
+.product-img {
+  width: 100%;
+  height: 140px; /* Smaller height */
+  object-fit: cover;
+  border-radius: 8px 8px 8px 8px;
+}
+
+/* Product Info */
+.product-info {
+  width: 100%;
+  padding: 8px;
+  text-align: start;
+  margin-left: 1.2rem;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 4px;
+  margin: 9px 0;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333c35;
+  margin: 9px 0;
+}
+
+/* Buy Button */
+.btn-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+  width: 100%;
+  max-width: 100px;
+  font-size: 1rem;
+}
+
+.btn-buy:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card {
+    max-width: 200px; /* Even smaller for mobile */
+  }
+
+  .product-img {
+    height: 120px;
+  }
+}
