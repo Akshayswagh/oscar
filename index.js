@@ -167,6 +167,10 @@ app.get('/contact', (req, res) => {
   res.render('client/contact'); 
 });
 
+app.use((req, res) => {
+  res.status(404).render("client/404");
+});
+
 
 // Start the server
 app.listen(PORT, () => {
